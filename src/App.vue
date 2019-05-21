@@ -3,11 +3,11 @@
     <h1 class="logo">Whack-a-mole!</h1>
     <button class="start-game">Start Game</button>
     <div class="counters-container">
-      <Counter></Counter>
-      <Counter></Counter>
-      <Counter></Counter>
+      <Counter label="Score:" v-bind:value="score"/>
+      <Counter label="High Score:" v-bind:value="highScore"/>
+      <Counter label="Timer" v-bind:value="timer"/>
     </div>
-    <Moles></Moles>
+    <Moles v-bind:moleData="moles" v-bind:gameActive="gameActive"/>
   </div>
 </template>
 
@@ -26,7 +26,7 @@ export default {
       score: 0,
       highScore: 0,
       timer: 20,
-      moles: [false, false, false, false],
+      moles: [true, false, true, false],
       gameActive: false
     };
   }
