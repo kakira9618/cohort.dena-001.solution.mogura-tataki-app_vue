@@ -1,72 +1,62 @@
 <template>
   <div class="whackamole">
-    <h1 class="logo">
-      Whack-a-mole!
-    </h1>
-    <button
-      class="start-game"
-    >
-      Start Game
-    </button>
+    <h1 class="logo">Whack-a-mole!</h1>
+    <button class="start-game">Start Game</button>
     <div class="counters-container">
-      <div class="counter">
-        <h2>Score:</h2>
-        <h1>0</h1>
-      </div>
-      <div class="counter">
-        <h2>High Score:</h2>
-        <h1>0</h1>
-      </div>
-      <div class="counter">
-        <h2>Timer:</h2>
-        <h1>0</h1>
-      </div>
+      <Counter></Counter>
+      <Counter></Counter>
+      <Counter></Counter>
     </div>
     <div class="moles-container gameActive">
       <div class="mole-container inactive">
         <div class="mole-image-container">
-          <img class="mole" src="./assets/mole.png" alt="mole"/>
+          <img class="mole" src="./assets/mole.png" alt="mole">
         </div>
-        <img class="dirt" src="./assets/dirt.svg" alt="mole dirt"/>
+        <img class="dirt" src="./assets/dirt.svg" alt="mole dirt">
       </div>
       <div class="mole-container inactive">
         <div class="mole-image-container">
-          <img class="mole" src="./assets/mole.png" alt="mole"/>
+          <img class="mole" src="./assets/mole.png" alt="mole">
         </div>
-        <img class="dirt" src="./assets/dirt.svg" alt="mole dirt"/>
+        <img class="dirt" src="./assets/dirt.svg" alt="mole dirt">
       </div>
       <div class="mole-container inactive">
         <div class="mole-image-container">
-          <img class="mole" src="./assets/mole.png" alt="mole"/>
+          <img class="mole" src="./assets/mole.png" alt="mole">
         </div>
-        <img class="dirt" src="./assets/dirt.svg" alt="mole dirt"/>
+        <img class="dirt" src="./assets/dirt.svg" alt="mole dirt">
       </div>
       <div class="mole-container inactive">
         <div class="mole-image-container">
-          <img class="mole" src="./assets/mole.png" alt="mole"/>
+          <img class="mole" src="./assets/mole.png" alt="mole">
         </div>
-        <img class="dirt" src="./assets/dirt.svg" alt="mole dirt"/>
+        <img class="dirt" src="./assets/dirt.svg" alt="mole dirt">
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Counter from "./components/Counter";
+
 export default {
-  name: 'App',
+  name: "App",
+  components: {
+    Counter
+  }
 };
 </script>
 
 <style>
 .whackamole {
-  font-family: 'Bungee', sans-serif;
+  font-family: "Bungee", sans-serif;
   max-width: 960px;
   margin: auto;
   text-align: center;
 }
 
 .start-game {
-  font-family: 'Bungee', sans-serif;
+  font-family: "Bungee", sans-serif;
   padding: 20px;
   border-radius: 3px;
   border: 0;
@@ -79,17 +69,6 @@ export default {
 .counters-container {
   display: flex;
   justify-content: space-evenly;
-}
-
-.counter {
-  border: 1px solid #000;
-  margin-top: 20px;
-  padding: 20px;
-}
-
-.counter h1,
-.counter h2 {
-  margin: 0;
 }
 
 .moles-container {
