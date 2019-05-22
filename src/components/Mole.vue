@@ -1,7 +1,7 @@
 <template>
   <div v-bind:class="classNames">
     <div class="mole-image-container">
-      <img class="mole" src="../assets/mole.png" alt="mole">
+      <img class="mole" src="../assets/mole.png" alt="mole" v-on:click="handleClick">
     </div>
     <img class="dirt" src="../assets/dirt.svg" alt="mole dirt">
   </div>
@@ -18,6 +18,11 @@ export default {
         active: this.active, // モグラが出てる場合
         inactive: !this.active // モグラが出てない場合
       };
+    }
+  },
+  methods: {
+    handleClick: function() {
+      this.$emit("whack", this.moleId);
     }
   }
 };
