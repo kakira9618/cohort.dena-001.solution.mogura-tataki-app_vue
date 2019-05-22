@@ -26,7 +26,7 @@ export default {
       score: 0,
       highScore: 0,
       timer: 20,
-      moles: [true, false, false, false],
+      moles: [false, false, false, false],
       gameActive: false
     };
   },
@@ -37,6 +37,9 @@ export default {
       this.moles = [false, false, false, false];
     },
     startGame: function() {
+      if (this.gameActive === true) {
+        return;
+      }
       this.resetState();
       this.gameActive = true;
       this.startTimer();
